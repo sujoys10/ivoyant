@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import GlobalState from './context/GlobalContext';
+import PaymentModalState from './context/PaymentModalContext';
+import './styles/base.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  
+    <PaymentModalState>
+      <GlobalState>
+        <App />
+      </GlobalState>
+    </PaymentModalState>,
   document.getElementById('root')
 );
 
